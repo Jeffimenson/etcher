@@ -5,26 +5,30 @@ const gridToggle = document.querySelector('#grid-toggle');
 const slider = document.querySelector('#slider');
 const sliderResult = document.querySelector('#slider-result'); 
 
-
-generateCells(); 
+const initialCellAmount = 16; 
+generateCells(initialCellAmount); 
 addGridToggle(); 
 
 let mouseDown = false; 
 generateMouseHoldDetection();
-
-slider.addEventListener('input', (e) => {
-    sliderResult.value = slider.value;
-});
-
-sliderResult.addEventListener('input', (e) => {
-    slider.value = sliderResult.value; 
-});
+makeSizeSliderFunctional(); 
 
 
-function generateCells(){
-    const cellAmount = slider.value; /*Specifically per row AND height */
-    const containerLength = container.offsetHeight; /*Height should always equal width based on stylesheet*/ 
-    const cellLength = container / cellAmount; 
+
+function makeSizeSliderFunctional(){
+    slider.addEventListener('input', (e) => {
+        sliderResult.value = slider.value;
+        generateCells(slider.value); 
+    });
+
+    sliderResult.addEventListener('input', (e) => {
+        slider.value = sliderResult.value; 
+        generateCells(sliderResult.value); 
+    });
+}
+
+function generateCells(cellAmount){
+    const cellLength = 100 / cellAmount; 
     container.innerHTML = ""; 
     for (let i = 0; i < cellAmount**2; i++){
         let newDiv = document.createElement('div'); 
@@ -33,8 +37,8 @@ function generateCells(){
         newDiv.style.height = `${cellLength}%`; 
         newDiv.style.width = `${cellLength}%`; 
 
-        newDiv.addEventListener('click', draw); 
-        newDiv.addEventListener('mouseover', holdDraw); 
+        newDiv.addEventListener('pointerdown', draw); 
+        newDiv.addEventListener('pointerover', holdDraw); 
 
         container.appendChild(newDiv);  
     }
