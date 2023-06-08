@@ -22,7 +22,8 @@ input {
     display: flex;
     flex-wrap: wrap;
 
-    /* border: solid 1px black; */
+    box-shadow: 1px 1px 10px black;
+
     
 }
 
