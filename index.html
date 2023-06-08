@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Etcher</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="program.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            
+        </div>
+        <section>
+            <label for="color-picker">Color chooser</label>
+            <input type="color" id="color-picker" name="color-picker">
+            
+            <label for="grid-toggle">Toggle grid</label>
+            <input type="checkbox" id="grid-toggle" name="grid-toggle">
+            
+            <label for="slider">Cells per row and column</label>
+            <div class="slider-holder">
+                <input id="slider" type="range" name="points" min="2" max="50" value="16">
+                <input id="slider-result" type="number" name="slider-result" min="2" max="50" value="16">
+            </div>
+        </section>
+    </body>
+</html>

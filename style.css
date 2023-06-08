@@ -1,0 +1,39 @@
+body {
+    background-color:lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    height: 100vh;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+input {
+    display: block;
+}
+.container {
+    height: 800px;
+    width: 800px; 
+    background-color: white;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    /* border: solid 1px black; */
+    
+}
+
+.cell {
+    height: 6.25%;
+    width: 6.25%;
+    box-sizing: border-box;
+    border: inherit;
+    user-select: none;
+}
+
+.slider-holder {
+    display: flex;
+}
